@@ -1,0 +1,22 @@
+# Explore the iris data set
+head(iris)
+summary (iris)
+
+# Plot Sepal.Length versus Sepal.Width
+plot(Sepal.Length ~ Sepal.Width, data=iris)
+
+# Compute the correlation coefficient for Sepal.Length versus Sepal.Width using function ‘cor’
+cor(iris$Sepal.Length, iris$Sepal.Width)
+
+# unique
+summary(iris$Species)
+unique(iris$Species)
+
+# Plot Sepal.Length versus Sepal.Width for species setosa
+df.1 <- iris[iris$Species=="setosa",]
+plot(Sepal.Length ~ Sepal.Width, data=df.1)
+
+
+# Compute the correlation coefficient for Sepal.Length versus Sepal.Width using function ‘cor’ for species setosa only
+df.1 <- iris[iris$Species=="setosa",]
+cor(df.1$Sepal.Length, df.1$Sepal.Width)

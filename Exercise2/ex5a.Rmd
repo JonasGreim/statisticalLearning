@@ -1,0 +1,17 @@
+# • Assess whether the mean Petal.Width is significantly different for versicolor and virginica
+versicolor.pw <- iris[iris$Species=='versicolor', 'Petal.Width']
+virginica.pw <- iris[iris$Species=='virginica','Petal.Width']
+
+
+# • Use a qqnorm plot only for data of these species (we were a bit imprecise before)
+qqnorm(c(versicolor.pw,virginica.pw))
+
+
+# • Evaluate whether you may use a one-sided alternative and check the effect
+boxplot(Petal.Width ~Species, data = iris)
+l <- list (var.virginica=var(virginica.pw), var.versicolor=var(versicolor.pw))
+l
+
+
+# • Use an appropriate test and interpret your results
+t.test(virginica.pw,versicolor.pw,alternative = 'two.sided', var.equal=TRUE)
