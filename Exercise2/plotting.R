@@ -1,5 +1,5 @@
-x <- 1:100 /25
-plot(x,x^2)
+x <- 1:100 / 25
+plot(x, x^2)
 
 # plot(sin, -pi,2*pi)
 

@@ -1,4 +1,4 @@
-boxplot(Sepal.Length ~Species, data = iris)
+boxplot(Sepal.Length ~ Species, data = iris)
 # Box lays 50% data located around median
 # straight line in box = median -> skewness of the data
 # Whisker = daten außerhalb box (min, max)
@@ -11,13 +11,13 @@ qqnorm(iris$Sepal.Length)
 
 
 # variance
-setosa.sl <- iris[iris$Species=='setosa',"Sepal.Length"]
-versicolor.sl <- iris[iris$Species=='versicolor',"Sepal.Length"]
-l <- list (var.setosa=var(setosa.sl), var.versicolor=var(versicolor.sl))
+setosa.sl <- iris[iris$Species == 'setosa', "Sepal.Length"]
+versicolor.sl <- iris[iris$Species == 'versicolor', "Sepal.Length"]
+l <- list(var.setosa = var(setosa.sl), var.versicolor = var(versicolor.sl))
 l
 
 # two sample t-test
-t.test (x=setosa.sl,y=versicolor.sl, alternative = "two.sided", var.equal=FALSE)
+t.test(x = setosa.sl, y = versicolor.sl, alternative = "two.sided", var.equal = FALSE)
 
 # assumption not normal distribution
-wilcox.test(x=setosa.sl,y=versicolor.sl, alternative = "two.sided", paired=FALSE)
+wilcox.test(x = setosa.sl, y = versicolor.sl, alternative = "two.sided", paired = FALSE)
